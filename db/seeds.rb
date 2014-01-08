@@ -14,7 +14,7 @@ Product.create!(
 		<p>Covers your barrel so you don't
 		accidentally shoot someone's eye out.</p>},
 	image_url: "http://hudsonvalleyairsoft.com/images/cover.jpg",
-	price: 5.0
+	price: 6.5
 	)
 
 Product.create!(
@@ -22,7 +22,7 @@ Product.create!(
 	description: %{
 		<p>Non-fogging goggles, high quality.</p>},
 	image_url: "http://ecx.images-amazon.com/images/I/41-iKgjY83L._SY300_.jpg",
-	price: 5.0
+	price: 19.95
 	)
 
 Product.create!(
@@ -30,5 +30,5 @@ Product.create!(
 	description: %{
 		<p>10,000 BBs, yellow.</p>},
 	image_url: "http://www.big5sportinggoods.com/photos/product/giant/4782420S163580/airsoft-pellets/10-000-airsoft-bbs-with-bonus-airsoft-pistol.jpg",
-	price: 5.0
+	price: 12.95
 	)
