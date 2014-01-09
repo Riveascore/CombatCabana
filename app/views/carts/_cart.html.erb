@@ -1,0 +1,11 @@
+<h2> Your Cart</h2>
+<table>
+	<%= render(@cart.line_items) %>
+	<tr class="totalPrice">
+		<td class="total_name" colspan="3">Total:</td>
+		<td class="total_price"> <%= number_to_currency(@cart.total_price) %></td>
+	</tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete,
+	data: { confirm: 'Are you sure?' }, :remote => true %>

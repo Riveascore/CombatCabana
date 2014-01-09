@@ -1,0 +1,11 @@
+$("#cart").html("<%= escape_javascript render(@cart) %>");
+
+/* Also, after rendering, BUT ONLY AFTER RENDERING!!!
+ 	We want to add the yellow-fade effect to the current item
+ 	or the item with id="current_item" */
+
+$("#current_item").css({
+	'background-color': '#88ff88'
+}).animate({
+	'background-color': '114411'
+}, 1000);

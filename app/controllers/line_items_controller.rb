@@ -42,7 +42,12 @@ class LineItemsController < ApplicationController
       if @line_item.save
         # format.html { redirect_to @line_item, notice: 'Line item was successfully created.' }
         # Here, we want to redirect to the cart (line_item's cart) instead of the line item.
-        format.html { redirect_to @line_item.cart }
+        
+        #Now we're redirecting to main page, so we can do ajax magic
+        format.html { redirect_to store_url }
+        # Adding an instance variable so we can know which item to highlight
+        # on ajax update for adding a line_item
+        format.js { @current_item = @line_item }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }

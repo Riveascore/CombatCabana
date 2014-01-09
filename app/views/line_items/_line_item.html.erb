@@ -1,0 +1,13 @@
+<!-- We do a check here to see if the item wer're rending is the newest
+		item added via ajax (since this whole thing is called xtimes based
+		for @cart.line_items) -->
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr>
+<% end %>
+	<!-- <td><%= image_tag(line_item.product.image_url, class: 'list_image') %></td> -->
+	<td><%= line_item.quantity %>&times;</td>
+	<td><%= line_item.product.title %></td>
+	<td><%= number_to_currency(line_item.total_price) %></td>
+</tr>
