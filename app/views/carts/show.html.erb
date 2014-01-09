@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+	<% @cart.line_items.each do |line_item| %>
+		<li>
+			<%= image_tag(line_item.product.image_url, class: 'list_image') %>
+			<%= line_item.product.title %>
+		</li>
+	<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
