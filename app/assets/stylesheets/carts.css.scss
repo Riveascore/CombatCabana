@@ -1,8 +1,14 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-ul {
+table {
     img {
       width: 80px;
+    }
+    .total_name {
+    	text-align: right;
     }	
+    .total_price {
+    	border-top: 1px solid black;
+    }
 }

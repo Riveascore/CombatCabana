@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<ul>
+<table>
 	<% @cart.line_items.each do |line_item| %>
-		<li>
-			<%= image_tag(line_item.product.image_url, class: 'list_image') %>
-			<%= line_item.product.title %>
-		</li>
+		<tr>
+			<td><%= image_tag(line_item.product.image_url, class: 'list_image') %></td>
+			<td><%= line_item.quantity %>&times;</td>
+			<td><%= line_item.product.title %></td>
+			<td><%= number_to_currency(line_item.total_price) %></td>
+		</tr>
 	<% end %>
-</ul>
+	<tr class="totalPrice">
+		<td class="total_name" colspan="3">Total:</td>
+		<td class="total_price"> <%= number_to_currency(@cart.total_price) %></td>
+	</tr>
+</table>
 
+<%= button_to 'Empty cart', @cart, method: :delete,
+	data: { confirm: 'Are you sure?' } %>
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>

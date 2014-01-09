@@ -11,7 +11,9 @@ CombatCabana::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'store#index'
+  root 'store#index', as: 'store'
+  # IMPORTANT!!!!! Needed to add ", as: 'store'"
+  # portion to make store_url work in carts controller for the redirect.
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
