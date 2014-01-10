@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pragprog Books Online Store</title>
+  <title>Combat Cabana</title>
   <%= stylesheet_link_tag    "application", media: "all",
     "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -12,15 +12,12 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
     <!-- <%= image_tag("logo.png") %> -->
-    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= @page_title || "Combat Cabana" %>
   </div>
   <div id="columns">
     <div id="side">
       <ul>
-        <li><a href="http://www....">Home</a></li>
-        <li><a href="http://www..../faq">Questions</a></li>
-        <li><a href="http://www..../news">News</a></li>
-        <li><a href="http://www..../contact">Contact</a></li>
+        <li><a href="http://localhost:3000/">Home</a></li>
       </ul>
       <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart', class: 'hayaya') do %>
