@@ -22,3 +22,10 @@ ruby:
   price:       49.50
   image_url:   ruby.png 
 #END:ruby
+
+HK_SL9:
+  title: HK SL 9 Airsoft Rifle
+  description:
+    "Brand: Heckler & KochVelocity (FPS): 430Caliber: 6mmAmmo Type: Airsoft BBs"
+  price: 324.99
+  image_url: http://cdn1.bigcommerce.com/server1900/uiygep6/products/1323/images/609/HK_SL9_Airsoft_Rifle__22231.1388726043.220.220.jpg

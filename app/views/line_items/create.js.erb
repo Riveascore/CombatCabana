@@ -1,4 +1,13 @@
-$("#cart").html("<%= escape_javascript render(@cart) %>");
+$('#cart').html("<%= escape_javascript render(@cart) %>");
+
+if ($('#cart tr').length > 1) {
+	$('#cart').show();
+}
+else {
+	$('#cart').hide();
+}
+
+
 
 /* Also, after rendering, BUT ONLY AFTER RENDERING!!!
  	We want to add the yellow-fade effect to the current item

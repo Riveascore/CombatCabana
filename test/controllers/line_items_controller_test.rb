@@ -24,8 +24,24 @@ class LineItemsControllerTest < ActionController::TestCase
 
     # assert_redirected_to line_item_path(assigns(:line_item))
     # We now redirect to cart on "Add Item", so we must change assertion
-    assert_redirected_to cart_path(assigns(:line_item).cart)
+    assert_redirected_to store_path
   end
+
+  test "should create line_item via ajax" do
+    assert_difference('LineItem.count') do
+      xhr :post, :create, product_id: products(:HK_SL9).id
+    end
+
+    assert_response :success
+    assert_select_jquery :html, '#cart' do
+      assert_select 'tr#current_item td', /HK SL 9 Airsoft Rifle/
+    end
+  end
+
+  test "markup needed for store.js.coffee is in place" do
+    get :index
+    assert_select '.store .entry > img', 3
+    assert_select '.entry input[type=submit]', 3
 
   test "should show line_item" do
     get :show, id: @line_item
